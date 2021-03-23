@@ -10,29 +10,27 @@
     margin: 0;
 }
 
-.dnd5e.sheet.actor ul.attributes li.attribute.resource h4.box-title input[type=text] {
-    font-weight: 700;
-}
-
+/* Styling for resource slot headers */
 .dnd5e.sheet.actor ul.attributes li.attribute.resource h4.box-title {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
+.dnd5e.sheet.actor ul.attributes li.attribute.resource h4.box-title input[type=text] {
+    font-weight: 700;
+}
+
 .dnd5e.sheet.actor ul.attributes li.attribute.resource a.item-edit {
     display: none;
     position: absolute;
     top: 0;
-    right: 2px;
+    right: 3px;
+    font-size: 12px;
 }
 
 .dnd5e.sheet.actor ul.attributes li.attribute.resource:hover a.item-edit {
     display: initial;
-}
-
-.dnd5e.sheet.actor ul.attributes li.attribute.resource a.item-edit i.fas {
-    font-size: 12px;
 }
 
 /* Temp fix for resource rest checkbox layout issues */
