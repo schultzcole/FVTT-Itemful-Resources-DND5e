@@ -6,10 +6,10 @@
   "author": "Cole Schultz (cole#9640)",
   "system": "dnd5e",
   "esmodules": [
-    "itemful-resources-setup.js"
+    "./itemful-resources-setup.mjs"
   ],
   "styles": [
-    "itemful-resources.css"
+    "./itemful-resources.css"
   ],
   "minimumCoreVersion": "0.7.9",
   "compatibleCoreVersion": "0.7.9",

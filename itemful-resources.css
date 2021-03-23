@@ -1,0 +1,24 @@
+/* Improve formatting for multiple resources */
+.dnd5e.sheet.actor ul.attributes.resources {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 5px;
+}
+
+.dnd5e.sheet.actor ul.attributes li.attribute.resource {
+    margin: 0;
+}
+
+.dnd5e.sheet.actor ul.attributes li.attribute.resource h4.box-title input[type=text] {
+    font-weight: 700;
+}
+
+/* Temp fix for resource rest checkbox layout issues */
+/* TODO remove after dnd5e 1.3.0 */
+.dnd5e.sheet.actor.character .resource .attribute-value label.recharge {
+    align-items: center;
+}
+
+.dnd5e.sheet.actor.character .resource .attribute-value label.recharge input {
+    flex: unset;
+}
