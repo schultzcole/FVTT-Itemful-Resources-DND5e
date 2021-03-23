@@ -8,22 +8,18 @@
         {{/if}}
     </h4>
     <div class="attribute-value">
-        {{#unless isItem}}
-            <label class="recharge checkbox flexcol">
-                <span>{{ localize "DND5E.AbbreviationSR" }}</span>
-                <input name="data.resources.{{name}}.sr" type="checkbox" {{checked sr}}/>
-            </label>
-        {{/unless}}
+        <label class="recharge checkbox flexcol">
+            <span>{{ localize "DND5E.AbbreviationSR" }}</span>
+            <input name="data.resources.{{name}}.sr" type="checkbox" {{checked sr}} {{#if isItem}}disabled{{/if}} />
+        </label>
 
         <input name="data.resources.{{name}}.value" type="number" value="{{value}}" placeholder="0" {{#if isItem}}disabled{{/if}} />
         <span class="sep"> / </span>
         <input name="data.resources.{{name}}.max" type="number" value="{{max}}" placeholder="0" {{#if isItem}}disabled{{/if}} />
 
-        {{#unless isItem}}
-            <label class="recharge checkbox flexcol">
-                <span>{{ localize "DND5E.AbbreviationLR" }}</span>
-                <input name="data.resources.{{name}}.lr" type="checkbox" {{checked lr}}/>
-            </label>
-        {{/unless}}
+        <label class="recharge checkbox flexcol">
+            <span>{{ localize "DND5E.AbbreviationLR" }}</span>
+            <input name="data.resources.{{name}}.lr" type="checkbox" {{checked lr}}  {{#if isItem}}disabled{{/if}}/>
+        </label>
     </div>
 </li>

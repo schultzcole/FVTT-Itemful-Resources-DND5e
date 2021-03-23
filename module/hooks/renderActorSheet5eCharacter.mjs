@@ -22,20 +22,23 @@ export default async function onRenderActorSheet5eCharacter(sheet, $html, templa
             // this slot is populated by an item, use the item's data to render the template
             const item = actor.items.get(slot.itemId);
             if (!item) {
-                console.error(`${MODULE_NAME} | Invalid item id for item resource slot. index: ${i} | itemId: ${slot.itemId}`);
+                console.warn(`${MODULE_NAME} | Invalid item id for item resource slot. index: ${i} | itemId: ${slot.itemId}`);
                 continue;
             }
+            const uses = item.data.data.uses;
             slotData = {
                 ...slot,
                 label: item.data.name,
-                value: item.data.data.uses.value,
-                max: parseInt(item.data.data.uses.max), // TODO handle cases where the item uses a non-number max
+                value: uses.value,
+                max: parseInt(uses.max), // TODO handle cases where the item uses a non-number max
+                sr: uses.per === "sr",
+                lr: ["lr", "day"].includes(uses.per),
             }
         } else {
             // ... or fallback to the default resource for this slot to render the template
             const name = RESOURCE_NAMES[i];
             if (!name) {
-                console.error(`${MODULE_NAME} | Invalid slot index for non item resource slot. index: ${i}`);
+                console.warn(`${MODULE_NAME} | Invalid slot index for non item resource slot. index: ${i}`);
                 continue;
             }
             slotData = templateData.data.resources[name];
