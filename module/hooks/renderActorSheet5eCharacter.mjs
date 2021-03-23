@@ -30,7 +30,7 @@ export default async function onRenderActorSheet5eCharacter(sheet, $html, templa
                 ...slot,
                 label: item.data.name,
                 value: uses.value,
-                max: parseInt(uses.max), // TODO handle cases where the item uses a non-number max
+                max: parseInt(uses.max),
                 sr: uses.per === "sr",
                 lr: ["lr", "day"].includes(uses.per),
             }
