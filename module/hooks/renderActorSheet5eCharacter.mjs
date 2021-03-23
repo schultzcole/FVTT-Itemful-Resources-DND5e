@@ -56,12 +56,22 @@ export default async function onRenderActorSheet5eCharacter(sheet, $html, templa
     // Handle item resource slot links
     $resources.find("a.resource-label.item-link").click(function(event) {
         const itemId = event.currentTarget.dataset.itemId;
+        const action = event.currentTarget.dataset.action;
         const item = actor.items.get(itemId);
         if (!item) {
-            console.error(`${MODULE_NAME} | Can't open item sheet for resource slot, item doesn't exist. data-item-id: ${itemId}`);
+            console.error(`${MODULE_NAME} | Item doesn't exist. data-item-id: ${itemId}`);
             return;
         }
-        item.sheet.render(true);
+        switch (action) {
+            case "use":
+                item.roll();
+                break;
+            case "edit":
+                item.sheet.render(true);
+                break;
+            default:
+                console.warn(`${MODULE_NAME} | Unrecognized item action: ${action}`);
+        }
     });
 }
 

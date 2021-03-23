@@ -1,6 +1,7 @@
 {
   "ItemfulResources": {
     "ActorSheet": {
+      "UseItem": "Use Item",
       "EditItem": "Edit Item",
       "EditItemToChange": "In order to change this field, you must edit the source item directly."
     }

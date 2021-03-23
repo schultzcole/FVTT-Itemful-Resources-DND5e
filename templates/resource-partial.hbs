@@ -1,11 +1,14 @@
 <li class="attribute resource">
     <h4 class="attribute-name box-title">
         {{#if isItem}}
-            <a class="resource-label item-link" data-item-id="{{itemId}}" title="{{localize "ItemfulResources.ActorSheet.EditItem"}}">{{label}}</a>
+            <a class="resource-label item-link" data-action="use" data-item-id="{{itemId}}" title="{{localize "ItemfulResources.ActorSheet.UseItem"}}">{{label}}</a>
         {{else}}
             <input name="{{name}}.label" type="text" value="{{label}}" placeholder="{{placeholder}}"/>
         {{/if}}
     </h4>
+    {{#if isItem}}
+        <a class="resource-label item-link item-edit" data-action="edit" data-item-id="{{itemId}}" title="{{localize "ItemfulResources.ActorSheet.EditItem"}}"><i class="fas fa-edit"></i></a>
+    {{/if}}
     <div class="attribute-value">
         <label class="recharge checkbox flexcol">
             <span>{{ localize "DND5E.AbbreviationSR" }}</span>
