@@ -3,23 +3,23 @@
         {{#if isItem}}
             <a class="resource-label item-link" data-item-id="{{itemId}}">{{label}}</a>
         {{else}}
-            <input name="data.resources.{{name}}.label" type="text" value="{{label}}"
+            <input name="{{name}}.label" type="text" value="{{label}}"
                    placeholder="{{placeholder}}"/>
         {{/if}}
     </h4>
     <div class="attribute-value">
         <label class="recharge checkbox flexcol">
             <span>{{ localize "DND5E.AbbreviationSR" }}</span>
-            <input name="data.resources.{{name}}.sr" type="checkbox" {{checked sr}} {{#if isItem}}disabled{{/if}} />
+            <input name="{{name}}.sr" type="checkbox" {{checked sr}} {{#if isItem}}disabled{{/if}} />
         </label>
 
-        <input name="data.resources.{{name}}.value" type="number" value="{{value}}" placeholder="0" {{#if isItem}}disabled{{/if}} />
+        <input name="{{name}}.value" type="number" value="{{value}}" placeholder="0" />
         <span class="sep"> / </span>
-        <input name="data.resources.{{name}}.max" type="number" value="{{max}}" placeholder="0" {{#if isItem}}disabled{{/if}} />
+        <input name="{{name}}.max" type="number" value="{{max}}" placeholder="0" {{#if isItem}}disabled{{/if}} />
 
         <label class="recharge checkbox flexcol">
             <span>{{ localize "DND5E.AbbreviationLR" }}</span>
-            <input name="data.resources.{{name}}.lr" type="checkbox" {{checked lr}}  {{#if isItem}}disabled{{/if}}/>
+            <input name="{{name}}.lr" type="checkbox" {{checked lr}}  {{#if isItem}}disabled{{/if}}/>
         </label>
     </div>
 </li>

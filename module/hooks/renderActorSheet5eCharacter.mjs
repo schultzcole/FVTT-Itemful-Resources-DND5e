@@ -3,6 +3,9 @@ import { FLAGS, MODULE_NAME } from "../constants.mjs";
 const RESOURCE_NAMES = [ "primary", "secondary", "tertiary" ];
 const RESOURCE_PARTIAL_PATH = "modules/itemful-resources/templates/resource-partial.hbs";
 
+/**
+ * Injects the dnd5e character sheet with custom itemful resources
+ */
 export default async function onRenderActorSheet5eCharacter(sheet, $html, templateData) {
     const $resources = $html.find("ul.attributes:has(> li.attribute.resource)");
     $resources.addClass("resources");
@@ -29,6 +32,7 @@ export default async function onRenderActorSheet5eCharacter(sheet, $html, templa
             slotData = {
                 ...slot,
                 label: item.data.name,
+                name: `${MODULE_NAME}-temp.${slot.itemId}.data.uses`,
                 value: uses.value,
                 max: parseInt(uses.max),
                 sr: uses.per === "sr",
@@ -42,6 +46,7 @@ export default async function onRenderActorSheet5eCharacter(sheet, $html, templa
                 continue;
             }
             slotData = templateData.data.resources[name];
+            slotData.name = `data.resources.${name}`;
         }
 
         const slotElement = await renderTemplate(RESOURCE_PARTIAL_PATH, slotData);
