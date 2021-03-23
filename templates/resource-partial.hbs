@@ -1,25 +1,24 @@
 <li class="attribute resource">
     <h4 class="attribute-name box-title">
         {{#if isItem}}
-            <a class="resource-label item-link" data-item-id="{{itemId}}">{{label}}</a>
+            <a class="resource-label item-link" data-item-id="{{itemId}}" title="{{localize "ItemfulResources.ActorSheet.EditItem"}}">{{label}}</a>
         {{else}}
-            <input name="{{name}}.label" type="text" value="{{label}}"
-                   placeholder="{{placeholder}}"/>
+            <input name="{{name}}.label" type="text" value="{{label}}" placeholder="{{placeholder}}"/>
         {{/if}}
     </h4>
     <div class="attribute-value">
         <label class="recharge checkbox flexcol">
             <span>{{ localize "DND5E.AbbreviationSR" }}</span>
-            <input name="{{name}}.sr" type="checkbox" {{checked sr}} {{#if isItem}}disabled{{/if}} />
+            <input name="{{name}}.sr" type="checkbox" {{checked sr}} {{#if isItem}}disabled title="{{localize "ItemfulResources.ActorSheet.EditItemToChange"}}"{{/if}} />
         </label>
 
         <input name="{{name}}.value" type="number" value="{{value}}" placeholder="0" />
         <span class="sep"> / </span>
-        <input name="{{name}}.max" type="number" value="{{max}}" placeholder="0" {{#if isItem}}disabled{{/if}} />
+        <input name="{{name}}.max" type="number" value="{{max}}" placeholder="0" {{#if isItem}}disabled title="{{localize "ItemfulResources.ActorSheet.EditItemToChange"}}"{{/if}} />
 
         <label class="recharge checkbox flexcol">
             <span>{{ localize "DND5E.AbbreviationLR" }}</span>
-            <input name="{{name}}.lr" type="checkbox" {{checked lr}}  {{#if isItem}}disabled{{/if}}/>
+            <input name="{{name}}.lr" type="checkbox" {{checked lr}}  {{#if isItem}}disabled title="{{localize "ItemfulResources.ActorSheet.EditItemToChange"}}"{{/if}}/>
         </label>
     </div>
 </li>
