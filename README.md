@@ -1,6 +1,6 @@
-# FVTT Module Template Repo
+# Itemful Resources for D&D5e
 
-A template repository for easy creation of new modules.
+Configure the resource slots on the dnd5e character sheet to display other attributes, including item uses.
 
 ## License
 
